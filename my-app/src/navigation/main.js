@@ -6,6 +6,8 @@ import App from './App.vue'
 /* ここから */
 import VueScrollTo from 'vue-scrollto'
 Vue.use(VueScrollTo)
+
+
 /* ここまで */
 
 /* ここから */

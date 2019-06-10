@@ -4,25 +4,25 @@
 
 	<ul class="nav">
 	  <li :class="navItemClass1">
-		<a class="nav-link" href="#nav1">Link</a>
+		<a class="nav-link" href="#" v-scroll-to="'#nav1'">１</a>
 	  </li>
 	  <li :class="navItemClass2">
-		<a class="nav-link" href="#nav2">Link</a>
+		<a class="nav-link" href="#" v-scroll-to="'#nav2'">２</a>
 	  </li>
-	  <li class="nav-item">
-		<a class="nav-link" href="#nav3">Link</a>
+	  <li :class="navItemClass3">
+		<a class="nav-link" href="#" v-scroll-to="'#nav3'">３</a>
 	  </li>
-	  <li class="nav-item">
-		<a class="nav-link" href="#nav4">Link</a>
+	  <li :class="navItemClass4">
+		<a class="nav-link" href="#" v-scroll-to="'#nav4'">４</a>
 	  </li>
-	  <li class="nav-item">
-		<a class="nav-link" href="#nav5">Link</a>
+	  <li :class="navItemClass5">
+		<a class="nav-link" href="#" v-scroll-to="'#nav5'">５</a>
 	  </li>
-	  <li class="nav-item">
-		<a class="nav-link" href="#nav6">Link</a>
+	  <li :class="navItemClass6">
+		<a class="nav-link" href="#" v-scroll-to="'#nav6'">６</a>
 	  </li>
-	  <li class="nav-item">
-		<a class="nav-link" href="#nav7">Link</a>
+	  <li :class="navItemClass7">
+		<a class="nav-link" href="#" v-scroll-to="'#nav7'">７</a>
 	  </li>
 	</ul>
 
@@ -102,8 +102,8 @@
         methods: {
             scrollToTop() {
                 //window.scrollTo(0,0)
-                this.$scrollTo('#top', 500, {
-                    offset: 0
+                this.$scrollTo('#top', 100, {
+                    offset: 50
                 });
             }
         },
@@ -113,7 +113,8 @@
             },
             topBtnClass() {
                 return {
-                    activeeee: this.scrollY > 500,
+                    //scrollYが500pxを越したらacitiveのクラスを付与
+                    active: this.scrollY > 500,
                     'btn-top': true
                 }
             },
@@ -123,7 +124,7 @@
                 if (this.scrollY > 0 && tar1 && tar2) {
                     return {
                         "nav-item": true,
-                        "active": tar1.getBoundingClientRect().y - 50 < this.scrollY && this.scrollY < tar2.getBoundingClientRect().y
+                        "active": tar1.getBoundingClientRect().y - 500 < this.scrollY && this.scrollY < tar2.getBoundingClientRect().y
                     }
                 } else {
                     return {
@@ -138,6 +139,20 @@
                     return {
                         "nav-item": true,
                         "active": tar2.getBoundingClientRect().y < this.scrollY && this.scrollY < tar3.getBoundingClientRect().y
+                    }
+                } else {
+                    return {
+                        "nav-item": true,
+                    }
+                }
+            },
+            navItemClass3() {
+                const tar3 = document.querySelector("#nav3")
+                const tar4 = document.querySelector("#nav4")
+                if (this.scrollY > 0 && tar3 && tar4) {
+                    return {
+                        "nav-item": true,
+                        "active": tar3.getBoundingClientRect().y < this.scrollY && this.scrollY < tar4.getBoundingClientRect().y
                     }
                 } else {
                     return {
@@ -168,6 +183,10 @@
   .container {
 	padding-top: 50px;
   }
+  
+  section {
+	margin-bottom: 300px;
+  }
 
   .nav {
 	background: #111;
@@ -195,4 +214,13 @@
   .active a {
 	color: red;
   }
+
+  .btn-top {
+	opacity: 0;
+  }
+
+  .btn-top.active {
+	opacity: 1;
+  }
+
 </style>

@@ -8,6 +8,12 @@ module.exports = {
             filename: 'index.html',
             title: 'Index Page',
         },
+        form: {
+            entry: 'src/form/main.js',
+            template: 'public/form.html',
+            filename: 'form.html',
+            title: 'Form Page',
+        },
         navigation: {
             entry: 'src/navigation/main.js',
             template: 'public/navigation.html',

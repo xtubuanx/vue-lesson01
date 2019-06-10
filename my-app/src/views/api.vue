@@ -40,10 +40,6 @@
 </script>
 
 <style>
-  .container{
-    max-width: 480px;
-  }
-
   .router-link-exact-active {
     color: red;
     font-weight: bold;

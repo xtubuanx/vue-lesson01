@@ -6,6 +6,13 @@ Vue.use(VueRouter)
 import App from './App.vue'
 Vue.config.productionTip = false
 
+/* ここから */
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+Vue.use(BootstrapVue)
+/* ここまで */
+
 // import TopView from './views/Top.vue'
 // import AboutView from './views/About.vue'
 // import ServiceView from './views/Service.vue'

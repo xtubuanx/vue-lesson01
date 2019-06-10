@@ -4,7 +4,7 @@
 	  <li :class="navItemClass1">
 		<a class="nav-link" href="#nav1">Link</a>
 	  </li>
-	  <li :class="navItemClass2>
+	  <li :class="navItemClass2">
 		<a class="nav-link" href="#nav2">Link</a>
 	  </li>
 	  <li class="nav-item">
